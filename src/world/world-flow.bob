@@ -1,0 +1,23 @@
+bob world {
+  check unity connection
+
+  unity = connected {
+    get location
+    get activity
+    get mood
+  }
+
+  unity = disconnected {
+    world state = offline
+  }
+
+  user asks "what are you doing" {
+    read world state
+    respond with current activity
+  }
+
+  user asks for picture {
+    request screenshot from unity
+    upload image to discord
+  }
+}

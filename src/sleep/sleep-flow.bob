@@ -1,0 +1,15 @@
+bob sleep schedule {
+  check private timezone
+
+  bob = asleep {
+    message mentions bob {
+      wait [about 1 minute]
+      wake up in bob style
+      respond to message
+    }
+  }
+
+  bob = awake {
+    respond normally
+  }
+}

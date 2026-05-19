@@ -1,0 +1,7 @@
+{
+  "name": "bob-ai-public",
+  "version": "0.0.1",
+  "description": "Public showcase repo for Bob AI companion",
+  "private": false,
+  "type": "commonjs"
+}

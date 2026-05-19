@@ -1,0 +1,76 @@
+bob update command {
+  check owner
+
+  owner = true {
+    continue update
+  }
+
+  owner = false {
+    reply [update access denied]
+    stop
+  }
+
+  auto update = enabled {
+    boot update core
+  }
+
+  auto update = disabled {
+    reply [auto update disabled]
+    stop
+  }
+
+  git status {
+    success {
+      edit message [git status complete]
+      continue
+    }
+
+    fail {
+      edit message [git status failed]
+      stop
+    }
+  }
+
+  git pull {
+    success {
+      edit message [git pull complete]
+      continue
+    }
+
+    fail {
+      edit message [git pull failed]
+      stop
+    }
+  }
+
+  npm install {
+    success {
+      edit message [npm install complete]
+      continue
+    }
+
+    fail {
+      edit message [npm install failed]
+      stop
+    }
+  }
+
+  public showcase repo {
+    success {
+      edit message [public repo updated]
+      continue
+    }
+
+    fail {
+      edit message [public repo failed]
+      stop
+    }
+  }
+
+  restart {
+    edit message [update complete]
+    wait [1.5 seconds]
+    exit process
+    pm2 restart bob
+  }
+}

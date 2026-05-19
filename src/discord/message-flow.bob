@@ -1,0 +1,29 @@
+message received {
+  ignore bot messages
+
+  message = "bob" {
+    reply [bob is online]
+  }
+
+  message = "bob ping" {
+    reply [pong]
+  }
+
+  message = "bob status" {
+    reply [public status]
+  }
+
+  message = "bob health" {
+    check machine
+    check world connection
+    reply [health report]
+  }
+
+  message = "bob update" {
+    send to update system
+  }
+
+  message = unknown {
+    ignore for now
+  }
+}

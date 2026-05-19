@@ -1,0 +1,21 @@
+bob memory {
+  user speaks {
+    check user profile
+  }
+
+  user is new {
+    create memory profile
+  }
+
+  user asks bob to remember something {
+    save note
+  }
+
+  user asks bob to forget something {
+    remove note
+  }
+
+  bob responds {
+    use safe memory only
+  }
+}
